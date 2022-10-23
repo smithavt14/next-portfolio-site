@@ -21,11 +21,11 @@ export default function Home() {
           Coming Soon
         </p>
         <div className="flex ">
-          <a href="https://www.linkedin.com/in/smithavt14/" target="_blank">
+          <a href="https://www.linkedin.com/in/smithavt14/" rel="noreferrer" target="_blank">
             <RiLinkedinFill className="h-10 w-10 mx-5 fill-indigo-500 hover:fill-indigo-100 duration-200	"/>
           </a>
 
-          <a href='https://github.com/smithavt14' target="_blank">
+          <a href='https://github.com/smithavt14' rel="noreferrer" target="_blank">
             <RiGithubFill className="h-10 w-10 mx-5 fill-indigo-500 hover:fill-indigo-100 duration-200	"/>
           </a>
         </div>
