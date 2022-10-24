@@ -13,21 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to my <span className="text-indigo-500 font-extrabold">Portfolio!</span>
-        </h1>
-
-        <p className={styles.description}>
-          Coming Soon
-        </p>
-        <div className="flex ">
-          <a href="https://www.linkedin.com/in/smithavt14/" rel="noreferrer" target="_blank">
-            <RiLinkedinFill className="h-10 w-10 mx-5 fill-indigo-500 hover:fill-indigo-100 duration-200	"/>
-          </a>
-
-          <a href='https://github.com/smithavt14' rel="noreferrer" target="_blank">
-            <RiGithubFill className="h-10 w-10 mx-5 fill-indigo-500 hover:fill-indigo-100 duration-200	"/>
-          </a>
+        <div className="w-7/12">
+          <p className="my-5 text-base antialiased">Hi, my name is </p>
+          <h1 className="my-5 text-6xl antialiased font-extrabold">Alex Smith.</h1>
+          <h1 className="my-5 text-6xl antialiased font-extrabold text-slate-400">I build digital experiences.</h1>
+          <p className="my-5 w-9/12 text-base antialiased text-slate-400">I&apos;m a product strategist who specializes in creating exceptional digital experiences. Currently, I&apos;m based in Shanghai and focused on building applications for the China market.</p>
         </div>
       </main>
     </div>
