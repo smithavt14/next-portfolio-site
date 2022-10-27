@@ -4,7 +4,11 @@ module.exports = {
     "./pages/index.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'midnight': '#1C0C32',
+      },
+    },
   },
   plugins: [],
 }
