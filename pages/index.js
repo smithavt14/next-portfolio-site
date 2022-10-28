@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
-    <div className="bg-midnight text-white relative">
+    <div className="text-white relative bg-gradient-to-tr from-midnight to-deepnight">
       <Head>
         <title>Alex&apos;s Portfolio</title>
         <meta name="description" content="A portfolio app, created by Alex" />
@@ -26,7 +26,7 @@ export default function Home() {
           <h1 className="my-5 text-5xl font-extrabold text-slate-400">I build digital experiences.</h1>
           <p className="my-5 text-base text-slate-400">I&apos;m a product strategist who specializes in creating awesome experiences for users. Currently, I&apos;m based in Shanghai and focused on building applications for the China market.</p>
         </div>
-        <Image src={mainBackground} layout='fill' objectFit='contain' objectPosition='bottom 0px left 0px' className="z-0 bg-midnight"/>
+        <Image src={mainBackground} layout='fill' objectFit='contain' objectPosition='bottom 0px left 0px' className="z-0"/>
       </div>
     </div>
   )
