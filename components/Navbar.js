@@ -1,13 +1,13 @@
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 h-28 w-90">
-      <div className="text-white">
-        <a href="#">Back to Top</a>
-        <a href="#">About</a>
-        <a href="#">Work</a>
-        <a href="#">Contact</a>
+    <div className="fixed inset-x-0 top-0 py-8 px-16 w-screen bg-midnight text-white flex justify-between items-center z-10">
+      <a href="#" className="font-semibold transition hover:text-slate-400">Back to Top</a>
+      <div className="flex justify-between items-center">
+        <a href="#" className="font-semibold px-4 transition hover:text-slate-400">About</a>
+        <a href="#" className="font-semibold px-4 transition hover:text-slate-400">Work</a>
+        <a href="#" className="font-semibold pl-4 transition hover:text-slate-400">Contact</a>
       </div>
-    </nav>
+    </div>
   );
 }
 
