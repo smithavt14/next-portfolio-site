@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="fixed inset-x-0 top-0 py-8 px-16 w-screen text-white flex justify-between items-center z-10">
+    <div className="fixed inset-x-0 top-0 py-8 px-16 w-screen text-white flex justify-between items-center z-10 invisible sm:visible">
       <a href="#" className="font-semibold transition hover:text-slate-400">Back to Top</a>
       <div className="flex justify-between items-center">
         <a href="#" className="font-semibold px-4 transition hover:animate-wiggle hover:text-slate-400">About</a>
