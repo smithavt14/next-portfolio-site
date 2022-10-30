@@ -12,7 +12,7 @@ const Hero = ({darkMode}) => {
   return (
     <div className={`flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-black dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
       <div className="
-      w-full mb-80 z-10 mx-auto px-6 max-w-5xl sm:mb-40 md:px-12 lg:px-24 xl:p-0">
+      w-full mb-80 z-10 mx-auto px-6 sm:mb-40 md:px-12 lg:px-24 xl:p48">
         <p className="my-5 text-base">Hi, my name is </p>
 
         <h2 className="mt-5 mb-1 font-extrabold text-responsive">Alex Smith.</h2>

@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     fontSize: {
-      responsive: ['clamp(40px, 8vw, 80px)', '1.1']
+      responsive: ['clamp(32px, 8vw, 80px)', '1.1']
     },
     extend: {
       colors: {
