@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}"
@@ -12,7 +13,8 @@ module.exports = {
       colors: {
         'midnight': '#1C0C32',
         'twilight': '#371761',
-        'deepnight': '#0a0412'
+        'deepnight': '#0a0412',
+        'deepPurple': '#8B4FD1'
       },
       keyframes: {
         otherBounce: {

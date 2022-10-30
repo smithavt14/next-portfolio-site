@@ -1,14 +1,20 @@
+import { useState } from 'react';
+
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import PageHead from '../components/Head';
 import About from '../components/About';
 
 export default function Home() {
+
+  const [darkMode, toggle] = useState(true);
+  const toggleDarkMode = () => { toggle(!darkMode) };
+
   return (
-    <div className="text-white antialiased relative bg-gradient-to-tr from-midnight to-deepnight">
+    <div className={darkMode ? 'dark' : ''}>
       <PageHead />
-      <Navbar />
-      <Hero />
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Hero darkMode={darkMode} />
       <About />
     </div>
   )
