@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    fontSize: {
+      responsive: ['clamp(40px, 8vw, 80px)', '1.1']
+    },
     extend: {
       colors: {
         'midnight': '#1C0C32',
@@ -12,13 +15,34 @@ module.exports = {
         'deepnight': '#0a0412'
       },
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' }
+        otherBounce: {
+          '0%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          },
+          '50%': {
+            transform: 'translateY(25%)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          }
+        },
+        fadeUp: {
+          '0%': {
+            transform: 'translatey(40px)',
+            opacity: '0'
+          },
+          '100%': {
+            transform: 'translatey(0px)',
+            opacity: '1'
+          }
         }
       },
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite'
+        fadeUp: 'fadeUp 0.2s ease-out',
+        bounce: 'otherBounce 1s infinite'
       }
     },
   },
