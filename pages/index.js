@@ -11,11 +11,11 @@ export default function Home() {
   const toggleDarkMode = () => { toggle(!darkMode) };
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={`scroll-smooth ${darkMode ? 'dark bg-midnight' : 'bg-sky-100'}`}>
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
-      <About />
+      <About darkMode={darkMode}/>
     </div>
   )
 }

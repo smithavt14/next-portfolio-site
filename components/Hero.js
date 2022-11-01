@@ -10,9 +10,8 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = ({darkMode}) => {
   return (
-    <div className={`flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-black dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
-      <div className="
-      w-full mb-80 z-10 mx-auto px-6 sm:mb-40 md:px-12 lg:px-24 xl:p48">
+    <div className={`snap-center flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-black dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
+      <div className="w-full mb-80 z-10 mx-auto px-6 max-w-screen-xl sm:mb-40 md:px-12 lg:px-24 xl:p48">
         <p className="my-5 text-base">Hi, my name is </p>
 
         <h2 className="mt-5 mb-1 font-extrabold text-responsive">Alex Smith.</h2>
@@ -20,7 +19,7 @@ const Hero = ({darkMode}) => {
 
         <p className="w-full my-5 text-base dark:text-slate-400 text-black lg:w-8/12">I&apos;m a product guy, endurance athlete, and content creator who specializes in building awesome experiences for users.</p>
 
-        <a href='#' className="
+        <a href='#about' className="
         invisible group w-fit mt-8 p-4 rounded flex items-center justify-center
         text-white dark:text-slate-400 dark:group-hover:text-deepPurple
         bg-deepPurple dark:bg-transparent
