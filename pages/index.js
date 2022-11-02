@@ -11,7 +11,7 @@ export default function Home() {
   const toggleDarkMode = () => { toggle(!darkMode) };
 
   return (
-    <div className={`scroll-smooth ${darkMode ? 'dark bg-midnight' : 'bg-sky-100'}`}>
+    <div className={`scroll-smooth snap-proximity snap-y ${darkMode ? 'dark bg-midnight' : 'bg-sky-100'}`}>
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />

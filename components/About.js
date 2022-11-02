@@ -5,7 +5,7 @@ import AboutSVG from './AboutSVG'
 
 const About = () => {
   return (
-    <section id="about" className="snap-center min-h-screen flex items-center overflow-hidden py-60">
+    <section id="about" className="snap-center min-h-screen flex items-center overflow-hidden py-40">
       <div className="mx-auto max-w-screen-xl justify-between relative lg:flex md:px-12 lg:px-24 xl:p48">
         <div className="mx-4 w-100 lg:w-1/2">
           <div className="flex items-center justify-between">
