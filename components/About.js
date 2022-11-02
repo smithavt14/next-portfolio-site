@@ -9,8 +9,8 @@ const About = () => {
       <div className="mx-auto max-w-screen-xl justify-between relative lg:flex md:px-12 lg:px-24 xl:p48">
         <div className="mx-4 w-100 lg:w-1/2">
           <div className="flex items-center justify-between">
-            <h3 className="text-4xl font-bold text-deepPurple dark:text-white">About Me</h3>
-            <div className="mx-8 grow h-px  bg-deepPurple dark:bg-white"></div>
+            <h3 className="text-4xl font-bold text-black dark:text-white">About Me</h3>
+            <div className="mx-8 grow h-px  bg-black dark:bg-white"></div>
           </div>
           <div className="mt-4 text-black dark:text-slate-400">
             <p className="mb-2">Why hello there! I&apos;m Alex and I enjoy creating meaningful experiences for people both on/offline.</p>

@@ -21,12 +21,12 @@ const Hero = ({darkMode}) => {
 
         <a href='#about' className="
         invisible group w-fit mt-8 p-4 rounded flex items-center justify-center
-        text-white dark:text-slate-400 dark:group-hover:text-deepPurple
+        text-white dark:text-white dark:group-hover:text-deepPurple
         bg-deepPurple dark:bg-transparent
-        border-2 border-deepPurple dark:border-slate-400 dark:group-hover:border-deepPurple
+        border-2 border-deepPurple dark:border-white dark:group-hover:border-deepPurple
         md:visible">
           <p>Check out more</p>
-          <FaArrowDown className="transition-all fill-white dark:fill-slate-400 w-0 group-hover:w-4 group-hover:animate-bounce group-hover:ml-4 "/>
+          <FaArrowDown className="transition-all fill-white w-0 group-hover:w-4 group-hover:animate-bounce group-hover:ml-4 "/>
         </a>
       </div>
 
