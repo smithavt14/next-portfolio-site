@@ -5,7 +5,7 @@ import { BsFillSunFill } from "react-icons/bs";
 
 const Navbar = ({darkMode, toggleDarkMode}) => {
   return (
-    <div className="fixed inset-x-0 top-0 py-8 px-16 w-screen text-white flex justify-center md:justify-end items-center backdrop-blur-sm z-10 ">
+    <div className="fixed inset-x-0 top-0 py-8 px-16 w-screen text-white flex justify-center md:justify-end items-center backdrop-blur-sm z-50 ">
       <a href="#" className="font-semibold mr-8 transition hover:text-deepPurple">About</a>
       <a href="#" className="font-semibold mr-8 transition hover:text-deepPurple">Work</a>
       <a href="#" className="font-semibold mr-8 transition hover:text-deepPurple">Contact</a>
