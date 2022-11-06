@@ -38,6 +38,14 @@ module.exports = {
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
           }
         },
+        spin: {
+          "0%": {
+            transform: 'rotate(0deg)'
+          },
+          "100%": {
+            transform: 'rotate(-360deg)'
+          }
+        },
         fadeUp: {
           '0%': {
             transform: 'translatey(40px)',
@@ -47,11 +55,30 @@ module.exports = {
             transform: 'translatey(0px)',
             opacity: '1'
           }
+        },
+        shiftRightFast: {
+          '0%': {
+            transform: 'translsatex(0px)',
+          },
+          '100%': {
+            transform: 'translatex(800px)'
+          }
+        },
+        shiftRightSlow: {
+          '0%': {
+            transform: 'translsatex(0px)',
+          },
+          '100%': {
+            transform: 'translatex(200px)'
+          }
         }
       },
       animation: {
         fadeUp: 'fadeUp 0.2s ease-out',
-        bounce: 'otherBounce 1s infinite'
+        bounce: 'otherBounce 1s infinite',
+        spin: 'spin 60s linear infinite',
+        shiftRightSlow: 'shiftRightSlow 60s linear infinite',
+        shiftRightFast: 'shiftRightFast 60s linear infinite'
       }
     },
   },

@@ -2,7 +2,12 @@
 import Image from 'next/image'
 
 import BigDarkBackground from '../public/images/bg-bgd.svg'
+import BigDarkMoonBackground from '../public/images/bg-moon.svg'
+
 import BigLightBackground from '../public/images/lt-bg-bgd.svg'
+import BigLightCloud1 from '../public/images/lt-bg-bgd-cloud-1.svg'
+import BigLightCloud2 from '../public/images/lt-bg-bgd-cloud-2.svg'
+
 import SmallDarkBackground from '../public/images/sm-bgd.svg'
 import SmallLightBackground from '../public/images/lt-sm-bgd.svg'
 
@@ -10,8 +15,8 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = ({darkMode}) => {
   return (
-    <section className={`snap-center flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-black dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
-      <div className="w-full mb-80 z-10 mx-auto px-6 max-w-screen-xl sm:mb-40 md:px-12 lg:px-24 xl:p48">
+    <section className={`overflow-hidden snap-center flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-black dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
+      <div className="w-full mb-80 z-20 mx-auto px-6 max-w-screen-xl sm:mb-40 md:px-12 lg:px-24 xl:p48">
         <p className="my-5 text-base">Hi, my name is </p>
 
         <h2 className="mt-5 mb-1 font-extrabold text-responsive">Alex Smith.</h2>
@@ -30,9 +35,18 @@ const Hero = ({darkMode}) => {
         </a>
       </div>
 
-      {/* Background Images */}
-      <Image src={BigDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`invisible z-0 ${darkMode ? "sm:visible" : "" }`}/>
+      {/* Dark Background + Moon */}
+      <Image src={BigDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`invisible z-10 ${darkMode ? "sm:visible" : "" }`}/>
+      <div className="absolute h-full w-1/2 right-0">
+        <Image src={BigDarkMoonBackground} layout='fill' objectFit='cover' objectPosition="10vh 0" className={`animate-spin invisible z-0 ${darkMode ? "sm:visible" : "" }`}/>
+      </div>
+
+      {/* Light Background + Clouds */}
       <Image src={BigLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`invisible z-0 ${darkMode ? "" : "sm:visible" }`}/>
+      <Image src={BigLightCloud1} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightFast invisible z-0 ${darkMode ? "" : "sm:visible" }`}/>
+      <Image src={BigLightCloud2} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightSlow invisible z-0 ${darkMode ? "" : "sm:visible" }`}/>
+
+      {/* Mobile Backgrounds */}
       <Image src={SmallDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "visible" : "invisible" }`}/>
       <Image src={SmallLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "invisible" : "visible" }`}/>
     </section>

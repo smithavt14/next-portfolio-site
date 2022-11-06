@@ -17,7 +17,7 @@ const About = () => {
 
             <p className="mb-2">Over the last eight years, I&apos;ve worked in China, helping build digital experiences for <strong className="text-deepPurple dark:text-white">multi-national companies, startups, individuals, and of course - myself.</strong></p>
 
-            <p className="mb-2">Most recently, I&apos;ve been teaching others how to pursue careers in Web & Data by operating <a className="text-deepPurple dark:text-white font-bold" href="https://www.lewagon.com/shanghai">the World&apos;s #1 Ranked Coding Bootcamp</a> in the heart of Shanghai, China.</p>
+            <p className="mb-2">Most recently, I&apos;ve been teaching others how to pursue careers in Web & Data by operating <a className="text-deepPurple dark:text-white font-bold" href="https://www.lewagon.com/shanghai" target="_blank" rel="noreferrer">the World&apos;s #1 Ranked Coding Bootcamp</a> in the heart of Shanghai, China.</p>
 
             <p className="mb-2">Apart from my interests in coding, design, and digital strategy, I spend an enormous amount of time on fitness, creating content, and hanging with my dog - Heizi. You can see more about my projects and experiences below.</p>
           </div>
