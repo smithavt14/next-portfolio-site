@@ -46,6 +46,14 @@ module.exports = {
             transform: 'rotate(-360deg)'
           }
         },
+        shiftUp: {
+          "0%": {
+            marginBottom: '0'
+          },
+          "100%": {
+            marginBottom: '8px'
+          }
+        },
         fadeUp: {
           '0%': {
             transform: 'translatey(40px)',
@@ -74,7 +82,8 @@ module.exports = {
         }
       },
       animation: {
-        fadeUp: 'fadeUp 0.2s ease-out',
+        fadeUp: 'fadeUp 0.5s ease-out',
+        shiftUp: 'shiftUp 0.2s ease-out',
         bounce: 'otherBounce 1s infinite',
         spin: 'spin 60s linear infinite',
         shiftRightSlow: 'shiftRightSlow 60s linear infinite',

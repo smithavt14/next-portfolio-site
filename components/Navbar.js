@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { BsMoonFill } from 'react-icons/bs';
 import { BsFillSunFill } from "react-icons/bs";
 

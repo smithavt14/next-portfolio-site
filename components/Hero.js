@@ -15,7 +15,7 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Hero = ({darkMode}) => {
   return (
-    <section className={`overflow-hidden snap-center flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-midnight dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
+    <section className={`overflow-hidden flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-midnight dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
       <div className="w-full mb-80 z-20 mx-auto px-6 max-w-screen-xl sm:mb-40 md:px-12 lg:px-24 xl:p48">
         <p className="my-5 text-base">Hi, my name is </p>
 
