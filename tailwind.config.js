@@ -17,6 +17,10 @@ module.exports = {
       '5xl': '3.052rem'
     },
     extend: {
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        'white': '0 0 48px rgba(255, 255, 255, 0.25)'
+      },
       colors: {
         'midnight': '#1C0C32',
         'twilight': '#371761',

@@ -5,10 +5,10 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Headline = ({toggleAboutContent}) => {
   return (
-    <div onClick={toggleAboutContent} className="group transition p-14 cursor-pointer">
+    <div onClick={toggleAboutContent} className="group p-14 cursor-pointer transition-all text-slate-400 text-center duration-300 hover:drop-shadow-white hover:text-black dark:hover:text-white">
       <h3 className="
-      transition-all text-4xl font-bold relative text-slate-400 text-center bottom-0
-      group-hover:bottom-1  group-hover:text-black dark:group-hover:text-white">About Me</h3>
+      text-4xl font-bold relative drop-shadow-2xl">About Me</h3>
+      <p className="text-center ">Expand</p>
     </div>
   )
 }
@@ -21,7 +21,7 @@ const Content = () => {
   }
 
   return (
-    <div className="lg:flex justify-between relative" onAnimationEnd={(event) => endAnimation(event)}>
+    <div className="lg:flex justify-between relative" onAnimationEnd={endAnimation}>
       <div className="mx-4 w-100 lg:w-7/12 shrink-0">
         <div className="flex items-center justify-between opacity-0 animate-fadeUp" style={{animationDelay: '0s'}}>
           <h3 className="text-4xl font-bold text-black dark:text-white relative">About Me</h3>
