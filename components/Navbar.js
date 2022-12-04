@@ -2,8 +2,13 @@ import { BsMoonFill } from 'react-icons/bs';
 import { BsFillSunFill } from "react-icons/bs";
 
 const Navbar = ({darkMode, toggleDarkMode}) => {
+  const endAnimation = (event) => {
+    event.target.classList.remove('opacity-0')
+    event.target.classList.add('opacity-100')
+  }
+
   return (
-    <div className="transition-all duration-200 fixed inset-x-0 top-0 py-8 px-12 w-screen text-midnight dark:text-white flex justify-center md:justify-end items-center z-50">
+    <div onAnimationEnd={(event) => endAnimation(event)} className="transition-all duration-200 fixed inset-x-0 top-0 py-8 px-12 w-screen text-midnight dark:text-white flex justify-center md:justify-end items-center z-50 opacity-0 animate-fadeUp" style={{animationDelay: '2s'}}>
       <a href="#" className="mr-8 duration-200 hover:text-slate-400">About</a>
       <a href="#" className="mr-8 duration-200 hover:text-slate-400">Work</a>
       <a href="#" className="mr-8 duration-200 hover:text-slate-400">Contact</a>

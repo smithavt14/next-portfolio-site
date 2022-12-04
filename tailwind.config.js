@@ -82,7 +82,7 @@ module.exports = {
         }
       },
       animation: {
-        fadeUp: 'fadeUp 0.5s ease-out',
+        fadeUp: 'fadeUp 0.3s ease-out',
         shiftUp: 'shiftUp 0.2s ease-out',
         bounce: 'otherBounce 1s infinite',
         spin: 'spin 60s linear infinite',
