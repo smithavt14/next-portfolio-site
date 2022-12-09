@@ -1,5 +1,6 @@
 import { AiFillCaretRight } from 'react-icons/ai';
-
+import { useState } from 'react';
+import experience from '/data/experience.js';
 
 const Headline = ({toggleAboutContent}) => {
   return (
@@ -18,35 +19,11 @@ const Content = () => {
     event.target.classList.add('opacity-100')
   }
 
-  const workExperience = {
-    active: "leWagon",
-    experience: {
-      'leWagon': {
-        title: "General Manager @Le Wagon China",
-        summary: "Le Wagon is a global education company specialized in immersive tech training in Web Development and Data Science. I've been acting General Manager of Le Wagon China for the last two years, helping to guide the business through a time of covid-zero policy in China.",
-        bullets: [
-          "Recruited and led a team of 12 full-time employees and 64 part-time instructors across two office locations to deliver our educational products to 393 students.",
-          "Increased total student enrollment 130% YoY ('21 - '22) by leading the strategy, design, and launch of a new data-focused, online, and flexible product offering called 'Short Courses'.",
-          "Maintained student enrollment numbers in our core products during the pandemic by managing the launch of new online and part-time options."
-        ],
-        date: "August 2019 - Present"
-      },
-      "zimaDigital": {
-        title: "Digital Consultant & Developer",
-        summary: "Zima Digital Technology Solutions is a WeChat focused digital agency based in Shanghai, China. We help our partners to make sense of the WeChat digital ecosystem through Digital Strategy, Mini Program Development, Social CRM Implementation, and Technical Recruitment.",
-        date: "May 2019 - October 2020",
-        bullets: [
-        ]
-      }
-    }
-
-  }
-
-  const toggleWorkExperience = (event) => {
-    console.log(event.target.dataset.key)
-    workExperience.active = event.target.dataset.key
-    console.log(workExperience)
-  }
+  const [activeWork, toggle] = useState('leWagon');
+  const toggleActiveWork = (event) => {
+    let key = event.target.dataset.key;
+    if (key) toggle(key);
+  };
 
   return (
     <div className="dark:text-white text-black">
@@ -58,25 +35,24 @@ const Content = () => {
 
       {/* Content of Work */}
       <div className="flex mt-10">
-        <div className="shrink-0 mr-10 text-slate-400 transition-all" onClick={toggleWorkExperience}>
-          <p className="font-semibold cursor-pointer hover:text-white transition-all" data-key="leWagon">Le Wagon</p>
-          <p className="mt-6 font-semibold cursor-pointer hover:text-white transition-all" data-key="zimaDigital">Zima Digital</p>
-          <p className="mt-6 font-semibold cursor-pointer hover:text-white transition-all" data-key="moveSH">MoveSH</p>
-          <p className="mt-6 font-semibold cursor-pointer hover:text-white transition-all" data-key="wiredcraft">Wiredcraft</p>
-          <p className="mt-6 font-semibold cursor-pointer hover:text-white transition-all" data-key="chineseLanguageInstitute">Chinese Language Institute</p>
+        <div className="w-40 shrink-0 text-slate-400 transition-all h-96" onClick={toggleActiveWork}>
+          <p className={`font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'leWagon' ? 'text-white border-l-4 pl-4' : ''}`} data-key="leWagon">Le Wagon</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'zimaDigital' ? 'text-white border-l-4 pl-4' : ''}`} data-key="zimaDigital">Zima Digital</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'moveSH' ? 'text-white border-l-4 pl-4' : ''}`} data-key="moveSH">MoveSH</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'wiredcraft' ? 'text-white border-l-4 pl-4' : ''}`} data-key="wiredcraft">Wiredcraft</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'cli' ? 'text-white border-l-4 pl-4' : ''}`} data-key="cli">CLI</p>
         </div>
         <div>
-          <p className="font-semibold mb-2">{workExperience.experience[workExperience.active]['title']}</p>
-          <p className="text-slate-400 mb-2">{workExperience.experience[workExperience.active]['date']}</p>
-          <p className="text-black dark:text-white">{workExperience.experience[workExperience.active]['summary']}</p>
-          {workExperience.experience[workExperience.active]['bullets'].map(bullet => {
-            return (
-              <div className="flex mt-4">
+          <p className="font-semibold mb-2">{experience[activeWork]['title']}</p>
+          <p className="text-slate-400 mb-2">{experience[activeWork]['date']}</p>
+          <p className="text-black dark:text-white">{experience[activeWork]['summary']}</p>
+          {experience[activeWork]['bullets'].map((bullet, index) => (
+              <div key={`${experience[activeWork].title} - ${index}`} className="flex mt-4">
                 <AiFillCaretRight className="dark:fill-white fill-black shrink-0 mt-1 mr-4" />
                 <p className="dark:text-white text-black">{bullet}</p>
               </div>
             )
-          })}
+          )}
         </div>
       </div>
     </div>
