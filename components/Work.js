@@ -2,12 +2,12 @@ import { AiFillCaretRight } from 'react-icons/ai';
 import { useState } from 'react';
 import experience from '/data/experience.js';
 
-const Headline = ({toggleAboutContent}) => {
+const Headline = ({toggleWorkContent}) => {
   return (
-    <div onClick={toggleAboutContent} className="group p-14 cursor-pointer transition-all text-slate-400 text-center duration-300 hover:drop-shadow-white hover:text-black dark:hover:text-white">
+    <div onClick={toggleWorkContent} className="mx-auto group p-14 cursor-pointer transition-all text-slate-400 text-center duration-300 hover:text-black dark:hover:text-white">
       <h3 className="
       text-4xl font-bold relative drop-shadow-2xl">Where I&apos;ve Worked</h3>
-      <p className="text-center ">Expand</p>
+      <p className="text-center animate-pulse ">Expand</p>
     </div>
   )
 }
@@ -26,23 +26,23 @@ const Content = () => {
   };
 
   return (
-    <div className="dark:text-white text-black">
+    <div className="dark:text-white text-black" onAnimationEnd={endAnimation}>
       {/* Headline of Work */}
-      <div className="flex justify-between items-center relative w-100">
-        <h3 className="text-4xl font-bold text-black dark:text-white relative">Where I've Worked</h3>
+      <div className="opacity-0 flex justify-between items-center relative w-100 animate-fadeUp">
+        <h3 className="text-4xl font-bold text-black dark:text-white relative">Where I&apos;ve Worked</h3>
         <div className="mx-8 grow h-px bg-black dark:bg-white"></div>
       </div>
 
       {/* Content of Work */}
       <div className="flex mt-10">
-        <div className="w-40 shrink-0 text-slate-400 transition-all h-96" onClick={toggleActiveWork}>
-          <p className={`font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'leWagon' ? 'text-white border-l-4 pl-4' : ''}`} data-key="leWagon">Le Wagon</p>
-          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'zimaDigital' ? 'text-white border-l-4 pl-4' : ''}`} data-key="zimaDigital">Zima Digital</p>
-          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'moveSH' ? 'text-white border-l-4 pl-4' : ''}`} data-key="moveSH">MoveSH</p>
-          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'wiredcraft' ? 'text-white border-l-4 pl-4' : ''}`} data-key="wiredcraft">Wiredcraft</p>
-          <p className={`mt-6 font-semibold cursor-pointer hover:text-white transition-all ${activeWork === 'cli' ? 'text-white border-l-4 pl-4' : ''}`} data-key="cli">CLI</p>
+        <div className="opacity-0 animate-fadeUp w-40 shrink-0 text-slate-400 transition-all h-96" onClick={toggleActiveWork} style={{animationDelay: '200ms'}}>
+          <p className={`font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'leWagon' ? 'text-black dark:text-white border-black dark:border-white border-l-4 pl-4' : ''}`} data-key="leWagon">Le Wagon</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'zimaDigital' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="zimaDigital">Zima Digital</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'moveSH' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="moveSH">MoveSH</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'wiredcraft' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="wiredcraft">Wiredcraft</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'cli' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="cli">CLI</p>
         </div>
-        <div>
+        <div className="opacity-0 animate-fadeUp" style={{animationDelay: '400ms'}}>
           <p className="font-semibold mb-2">{experience[activeWork]['title']}</p>
           <p className="text-slate-400 mb-2">{experience[activeWork]['date']}</p>
           <p className="text-black dark:text-white">{experience[activeWork]['summary']}</p>
@@ -59,11 +59,12 @@ const Content = () => {
   )
 }
 
-const Work = () => {
+const Work = ({workContent, toggleWorkContent}) => {
   return (
-    <section id="work" className="snap-start z-20 h-screen flex items-center overflow-hidden py-40">
-      <div className="mx-auto max-w-screen-xl justify-between relative lg:flex md:px-12 lg:px-24 xl:px-48">
-      { true && <Content />}
+    <section id="work" className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-tr text-midnight from-sky-100 to-sky-300 dark:text-white dark:from-midnight dark:to-deepnight px-6 md:px-24 lg:px-32 xl:px-48">
+      <div className="justify-between relative lg:flex">
+      { !workContent && <Headline toggleWorkContent={toggleWorkContent} /> }
+      { workContent && <Content /> }
       </div>
     </section>
    );

@@ -14,13 +14,16 @@ export default function Home() {
   const [aboutContent, aboutToggle] = useState(false);
   const toggleAboutContent = () => { aboutToggle(!aboutContent) };
 
+  const [workContent, workToggle] = useState(false);
+  const toggleWorkContent = () => { workToggle(!workContent) };
+
   return (
-    <div className={`scroll-smooth select-none ${darkMode ? 'dark bg-midnight' : 'bg-sky-100'}`}>
+    <div className={`select-none ${darkMode ? 'dark bg-midnight' : 'bg:'}`}>
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
-      <About darkMode={darkMode} aboutContent={aboutContent} toggleAboutContent={toggleAboutContent}/>
-      <Work darkMode={darkMode} />
+      <About aboutContent={aboutContent} toggleAboutContent={toggleAboutContent}/>
+      <Work workContent={workContent} toggleWorkContent={toggleWorkContent}/>
     </div>
   )
 }

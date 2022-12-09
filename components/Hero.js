@@ -21,8 +21,12 @@ const Hero = ({darkMode}) => {
   }
 
   return (
-    <section onAnimationEnd={(event) => endAnimation(event)} className={`overflow-hidden flex flex-col justify-center min-h-screen box-border bg-gradient-to-tr text-midnight dark:text-white  ${darkMode ? "from-midnight to-deepnight" : "from-sky-100 to-sky-300"}`}>
-      <div className="w-full mb-80 z-20 mx-auto px-6 max-w-screen-xl sm:mb-40 md:px-12 lg:px-24 xl:p48">
+    <section id="hero" onAnimationEnd={(event) => endAnimation(event)} className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-tr text-midnight from-sky-100 to-sky-300
+      dark:text-white dark:from-midnight dark:to-deepnight
+      px-6 md:px-12 lg:px-24 xl:p48">
+
+      {/* Hero Content */}
+      <div className="w-full z-20 mb-32">
         <p className="my-5 text-base opacity-0 animate-fadeUp" style={{animationDelay: '1s'}}>Hi, my name is </p>
 
         <h2 className="mt-5 mb-1 font-extrabold text-responsive opacity-0 animate-fadeUp" style={{animationDelay: '1.2s'}}>Alex Smith.</h2>
@@ -40,20 +44,22 @@ const Hero = ({darkMode}) => {
         </a>
       </div>
 
-      {/* Dark Background + Moon */}
-      <Image src={BigDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`invisible z-10 ${darkMode ? "sm:visible" : "" }`}/>
-      <div className="absolute h-full w-1/2 right-0">
-        <Image src={BigDarkMoonBackground} layout='fill' objectFit='cover' objectPosition="10vh 0" className={`animate-spin invisible z-0 ${darkMode ? "sm:visible" : "" }`}/>
+      <div id="hero-background" className="overflow-hidden w-full h-screen absolute z-10 inset-x-0 top-0">
+        {/* Dark Background + Moon */}
+        <Image src={BigDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`z-10 invisible ${darkMode ? "sm:visible" : "invisible" }`}/>
+        <div className="absolute h-full w-1/2 right-0">
+          <Image src={BigDarkMoonBackground} layout='fill' objectFit='cover' objectPosition="10vh 0" className={`animate-spin z-0 ${darkMode ? "sm:visible" : "invisible" }`}/>
+        </div>
+
+        {/* Light Background + Clouds */}
+        <Image src={BigLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`z-0 ${darkMode ? "invisible" : "sm:visible" }`}/>
+        <Image src={BigLightCloud1} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightFast z-0 ${darkMode ? "invisible" : "sm:visible" }`}/>
+        <Image src={BigLightCloud2} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightSlow z-0 ${darkMode ? "invisible" : "sm:visible" }`}/>
+
+        {/* Mobile Backgrounds */}
+        <Image src={SmallDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "" : "invisible" }`}/>
+        <Image src={SmallLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "invisible" : "" }`}/>
       </div>
-
-      {/* Light Background + Clouds */}
-      <Image src={BigLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`invisible z-0 ${darkMode ? "" : "sm:visible" }`}/>
-      <Image src={BigLightCloud1} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightFast invisible z-0 ${darkMode ? "" : "sm:visible" }`}/>
-      <Image src={BigLightCloud2} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightSlow invisible z-0 ${darkMode ? "" : "sm:visible" }`}/>
-
-      {/* Mobile Backgrounds */}
-      <Image src={SmallDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "visible" : "invisible" }`}/>
-      <Image src={SmallLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "invisible" : "visible" }`}/>
     </section>
   );
 }

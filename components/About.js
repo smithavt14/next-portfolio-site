@@ -5,10 +5,9 @@ import { FaArrowDown } from 'react-icons/fa';
 
 const Headline = ({toggleAboutContent}) => {
   return (
-    <div onClick={toggleAboutContent} className="group p-14 cursor-pointer transition-all text-slate-400 text-center duration-300 hover:drop-shadow-white hover:text-black dark:hover:text-white">
-      <h3 className="
-      text-4xl font-bold relative drop-shadow-2xl">About Me</h3>
-      <p className="text-center ">Expand</p>
+    <div onClick={toggleAboutContent} className="mx-auto group p-14 cursor-pointer transition-all text-slate-400 text-center duration-300 hover:text-black dark:hover:text-white">
+      <h3 className="text-4xl font-bold relative drop-shadow-2xl">About Me</h3>
+      <p className="text-center animate-pulse">Expand</p>
     </div>
   )
 }
@@ -22,7 +21,7 @@ const Content = () => {
 
   return (
     <div className="lg:flex justify-between relative" onAnimationEnd={endAnimation}>
-      <div className="mx-4 w-100 lg:w-7/12 shrink-0">
+      <div className="mr-4 w-100 lg:w-7/12 shrink-0">
         <div className="flex items-center justify-between opacity-0 animate-fadeUp" style={{animationDelay: '0s'}}>
           <h3 className="text-4xl font-bold text-black dark:text-white relative">About Me</h3>
           <div className="mx-8 grow h-px  bg-black dark:bg-white"></div>
@@ -49,9 +48,9 @@ const Content = () => {
 
 const About = ({aboutContent, toggleAboutContent}) => {
   return (
-    <section id="about" className="snap-start z-100 h-screen flex items-center overflow-hidden py-40">
-      <div className="mx-auto max-w-screen-xl justify-between relative lg:flex md:px-12 lg:px-24 xl:px-48">
-      { !aboutContent && <Headline toggleAboutContent={toggleAboutContent} />}
+    <section id="about" className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-br text-midnight from-sky-100 to-sky-300 dark:text-white dark:from-midnight dark:to-deepnight px-6 md:px-24 lg:px-32 xl:px-48">
+      <div className="max-w-screen-xl justify-between relative lg:flex">
+      { !aboutContent && <Headline toggleAboutContent={toggleAboutContent}/>}
       { aboutContent && <Content />}
       </div>
     </section>
