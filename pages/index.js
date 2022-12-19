@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import PageHead from '../components/Head';
 import About from '../components/About';
 import Work from '../components/Work';
+import Footer from '../components/Footer';
 
 export default function Home() {
 
@@ -22,8 +23,9 @@ export default function Home() {
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
-      <About aboutContent={aboutContent} toggleAboutContent={toggleAboutContent}/>
-      <Work workContent={workContent} toggleWorkContent={toggleWorkContent}/>
+      <About aboutContent={aboutContent} toggleAboutContent={toggleAboutContent} />
+      <Work workContent={workContent} toggleWorkContent={toggleWorkContent} />
+      <Footer />
     </div>
   )
 }

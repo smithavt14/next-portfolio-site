@@ -62,7 +62,7 @@ const Content = () => {
 const Work = ({workContent, toggleWorkContent}) => {
   return (
     <section id="work" className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-tr text-midnight from-sky-100 to-sky-300 dark:text-white dark:from-midnight dark:to-deepnight px-6 md:px-24 lg:px-32 xl:px-48">
-      <div className="justify-between relative lg:flex">
+      <div className="max-w-screen-xl mx-auto justify-between relative lg:flex">
       { !workContent && <Headline toggleWorkContent={toggleWorkContent} /> }
       { workContent && <Content /> }
       </div>

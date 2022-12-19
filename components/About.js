@@ -49,7 +49,7 @@ const Content = () => {
 const About = ({aboutContent, toggleAboutContent}) => {
   return (
     <section id="about" className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-br text-midnight from-sky-100 to-sky-300 dark:text-white dark:from-midnight dark:to-deepnight px-6 md:px-24 lg:px-32 xl:px-48">
-      <div className="max-w-screen-xl justify-between relative lg:flex">
+      <div className="max-w-screen-xl mx-auto justify-between relative lg:flex">
       { !aboutContent && <Headline toggleAboutContent={toggleAboutContent}/>}
       { aboutContent && <Content />}
       </div>
