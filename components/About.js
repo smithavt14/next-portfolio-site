@@ -39,7 +39,7 @@ const Content = () => {
         </div>
       </div>
       <div className="mx-4 h-full flex grow-0 justify-center items-center opacity-0 animate-fadeUp" style={{animationDelay: '400ms'}}>
-        <img className="object-cover rounded-2xl h-full" src="images/headshot.png" alt="Profile Pic" />
+        <img className="object-cover rounded-2xl h-full" src="images/headshot.jpeg" alt="Profile Pic" />
       </div>
     </div>
   )
