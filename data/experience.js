@@ -1,19 +1,29 @@
 const experience = {
+  "klarna": {
+    title: "Product Manager",
+    summary: "Klarna is a leading global payments and shopping service, providing a seamless and innovative experience for millions of customers.",
+    bullets: [
+      "Driving the development and implementation of AI-powered functionality within the Klarna mobile app, to increase engagement and customer satisfaction."
+    ],
+    date: "February 2023 - Present"
+  },
   "leWagon": {
-    title: "General Manager @Le Wagon China",
+    title: "General Manager",
     summary: "Le Wagon is a global education company specialized in immersive tech training in Web Development and Data Science. I've been acting General Manager of Le Wagon China for the last two years, helping to guide the business through a time of covid-zero policy in China.",
     bullets: [
       "Recruited and led a team of 12 full-time employees and 64 part-time instructors across two office locations to deliver our educational products to 393 students.",
       "Increased total student enrollment 130% YoY ('21 - '22) by leading the strategy, design, and launch of a new data-focused, online, and flexible product offering called 'Short Courses'.",
       "Maintained student enrollment numbers in our core products during the pandemic by managing the launch of new online and part-time options."
     ],
-    date: "August 2019 - Present"
+    date: "August 2019 - January 2023"
   },
   "zimaDigital": {
     title: "Digital Consultant & Developer",
     summary: "Zima Digital Technology Solutions is a WeChat focused digital agency based in Shanghai, China. We help our partners to make sense of the WeChat digital ecosystem through Digital Strategy, Mini Program Development, Social CRM Implementation, and Technical Recruitment.",
     date: "May 2019 - October 2020",
-    bullets: []
+    bullets: [
+      ""
+    ]
   },
   "moveSH": {
     title: "Product Lead & Frontend Developer",

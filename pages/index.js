@@ -21,7 +21,7 @@ export default function Home() {
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
       <About />
-      <Work workContent={workContent} toggleWorkContent={toggleWorkContent} />
+      <Work />
       <Footer />
     </div>
   )

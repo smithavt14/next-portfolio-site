@@ -36,7 +36,8 @@ const Content = () => {
       {/* Content of Work */}
       <div className="flex mt-10">
         <div className="opacity-0 animate-fadeUp w-40 shrink-0 text-slate-400 transition-all h-96" onClick={toggleActiveWork} style={{animationDelay: '200ms'}}>
-          <p className={`font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'leWagon' ? 'text-black dark:text-white border-black dark:border-white border-l-4 pl-4' : ''}`} data-key="leWagon">Le Wagon</p>
+          <p className={`font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'klarna' ? 'text-black dark:text-white border-black dark:border-white border-l-4 pl-4' : ''}`} data-key="klarna">Klarna</p>
+          <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'leWagon' ? 'text-black dark:text-white border-black dark:border-white border-l-4 pl-4' : ''}`} data-key="leWagon">Le Wagon</p>
           <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'zimaDigital' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="zimaDigital">Zima Digital</p>
           <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'moveSH' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="moveSH">MoveSH</p>
           <p className={`mt-6 font-semibold cursor-pointer hover:text-black dark:hover:text-white transition-all ${activeWork === 'wiredcraft' ? 'text-black dark:text-white border-black dark:border-white  border-l-4 pl-4' : ''}`} data-key="wiredcraft">Wiredcraft</p>
@@ -59,12 +60,11 @@ const Content = () => {
   )
 }
 
-const Work = ({workContent, toggleWorkContent}) => {
+const Work = () => {
   return (
     <section id="work" className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-tr text-midnight from-sky-100 to-sky-300 dark:text-white dark:from-midnight dark:to-deepnight px-6 md:px-24 lg:px-32 xl:px-48">
       <div className="max-w-screen-xl mx-auto justify-between relative lg:flex">
-      { !workContent && <Headline toggleWorkContent={toggleWorkContent} /> }
-      { workContent && <Content /> }
+      <Content />
       </div>
     </section>
    );
