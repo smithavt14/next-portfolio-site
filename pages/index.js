@@ -12,9 +12,6 @@ export default function Home() {
   const [darkMode, darkToggle] = useState(true);
   const toggleDarkMode = () => { darkToggle(!darkMode) };
 
-  const [aboutContent, aboutToggle] = useState(false);
-  const toggleAboutContent = () => { aboutToggle(!aboutContent) };
-
   const [workContent, workToggle] = useState(false);
   const toggleWorkContent = () => { workToggle(!workContent) };
 
@@ -23,7 +20,7 @@ export default function Home() {
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
-      <About aboutContent={aboutContent} toggleAboutContent={toggleAboutContent} />
+      <About />
       <Work workContent={workContent} toggleWorkContent={toggleWorkContent} />
       <Footer />
     </div>

@@ -34,8 +34,7 @@ const Content = () => {
           <a href="#work" className="group flex mt-10">
             <p className=" dark:text-white font-bold">You can see more about my projects and experiences below.</p>
             <FaArrowDown className="
-            transition-all fill-midnight dark:fill-white opacity-0 ml-4 bottom-0
-            group-hover:opacity-100 group-hover:animate-bounce"/>
+            transition-all fill-midnight dark:fill-white opacity-1 ml-4 bottom-0 animate-bounce"/>
           </a>
         </div>
       </div>
@@ -46,12 +45,11 @@ const Content = () => {
   )
 }
 
-const About = ({aboutContent, toggleAboutContent}) => {
+const About = () => {
   return (
     <section id="about" className="relative overflow-hidden flex flex-col justify-center h-screen box-border bg-gradient-to-br text-midnight from-sky-100 to-sky-300 dark:text-white dark:from-midnight dark:to-deepnight px-6 md:px-24 lg:px-32 xl:px-48">
       <div className="max-w-screen-xl mx-auto justify-between relative lg:flex">
-      { !aboutContent && <Headline toggleAboutContent={toggleAboutContent}/>}
-      { aboutContent && <Content />}
+        <Content />
       </div>
     </section>
    );
