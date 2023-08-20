@@ -9,9 +9,6 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
 
   return (
     <div onAnimationEnd={(event) => endAnimation(event)} className="transition-all duration-200 fixed inset-x-0 top-0 py-8 px-12 w-screen text-midnight dark:text-white flex justify-center md:justify-end items-center z-50 opacity-0 animate-fadeUp" style={{animationDelay: '2s'}}>
-      <a href="#about" className="mr-8 duration-200 hover:text-slate-400">About</a>
-      <a href="#work" className="mr-8 duration-200 hover:text-slate-400">Work</a>
-
       <div onClick={toggleDarkMode} className="
       group min-h-7 py-2 px-4 cursor-pointer border-2 rounded-full flex items-center transition-all duration-200
       border-midnight dark:border-white relative">

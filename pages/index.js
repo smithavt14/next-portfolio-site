@@ -20,9 +20,6 @@ export default function Home() {
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
-      <About />
-      <Work />
-      <Footer />
     </div>
   )
 }
