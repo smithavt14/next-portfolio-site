@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 import BigDarkBackground from '../public/images/bg-bgd.svg'
 import BigDarkMoonBackground from '../public/images/bg-moon.svg'
