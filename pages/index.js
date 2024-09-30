@@ -15,7 +15,7 @@ export default function Home() {
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
-      <Blog darkMode={darkMode} />
+      {/* <Blog darkMode={darkMode} /> */}
     </div>
   )
 }
