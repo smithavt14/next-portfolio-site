@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import PageHead from '../components/Head';
+import Blog from '../components/Blog';
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Hero darkMode={darkMode} />
+      <Blog darkMode={darkMode} />
     </div>
   )
 }
