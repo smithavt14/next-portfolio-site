@@ -1,7 +1,25 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { BsMoonFill } from 'react-icons/bs';
 import { BsFillSunFill } from "react-icons/bs";
+import { FaArrowLeft } from 'react-icons/fa';
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = ({ darkMode, toggleDarkMode, animationDelay }) => {
+  const { pathname } = useRouter();
+
+  const justifyContent = pathname === '/blog' ? 'space-between' : 'flex-end';
+
+  const renderBackButton = () => {
+    if (pathname === '/blog') {
+      return (
+        <Link className="text-midnight dark:text-white flex items-center" href="/" passHref>
+          <FaArrowLeft className="mr-2" />
+        </Link>
+      );
+    }
+    return null;
+  };
+
   const endAnimation = (event) => {
     event.target.classList.remove('opacity-0')
     event.target.classList.add('opacity-100')
@@ -10,9 +28,10 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   return (
     <div
       onAnimationEnd={(event) => endAnimation(event)}
-      className="transition-all duration-200 fixed inset-x-0 top-0 p-6 md:p-12 lg:px-24 w-screen text-midnight dark:text-white flex justify-end items-center z-50 opacity-0 animate-fadeUp"
-      style={{ animationDelay: '2s' }}
+      style={{ justifyContent }}
+      className="transition-all duration-200 fixed inset-x-0 top-0 p-6 md:p-12 lg:px-24 w-screen text-midnight dark:text-white flex items-center z-50 opacity-0 animate-fadeUp"
     >
+      {renderBackButton()}
       <div
         onClick={toggleDarkMode}
         className="group min-h-7 py-2 px-4 cursor-pointer border-2 rounded-full flex items-center transition-all duration-200 border-midnight dark:border-white relative"
