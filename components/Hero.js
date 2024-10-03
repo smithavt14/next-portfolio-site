@@ -12,10 +12,10 @@ import BigLightCloud2 from '../public/images/lt-bg-bgd-cloud-2.svg'
 import SmallDarkBackground from '../public/images/sm-bgd.svg'
 import SmallLightBackground from '../public/images/lt-sm-bgd.svg'
 
-import LinkedInIcon from './svgs/LinkedInIcon'
-import GitHubIcon from './svgs/GitHubIcon'
-import EmailIcon from './svgs/EmailIcon'
-import BlogIcon from './svgs/BlogIcon'
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { FaBrain } from "react-icons/fa";
 
 const Hero = ({ darkMode }) => {
 
@@ -39,10 +39,10 @@ const Hero = ({ darkMode }) => {
         <p className="w-full my-5 text-base dark:text-slate-400 text-slate-500 lg:w-8/12 opacity-0 animate-fadeUp" style={{ animationDelay: '1.6s' }}>I&apos;m an endurance athlete and product guy who specializes in building awesome experiences for users.</p>
 
         <div className="my-8 flex justify-start items-center">
-          <IconLink href="https://www.linkedin.com/in/smithavt14/" target="_blank" rel="noreferrer" Icon={LinkedInIcon} style={{ animationDelay: '1.8s' }} />
-          <IconLink href="https://github.com/smithavt14" target="_blank" rel="noreferrer" Icon={GitHubIcon} style={{ animationDelay: '1.8s' }} />
-          <IconLink href="mailto:hello@alex.cn.com" Icon={EmailIcon} style={{ animationDelay: '1.8s' }} />
-          <IconLink href="/blog" Icon={BlogIcon} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="https://www.linkedin.com/in/smithavt14/" target="_blank" rel="noreferrer" Icon={FaLinkedin} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="https://github.com/smithavt14" target="_blank" rel="noreferrer" Icon={FaGithub} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="mailto:hello@alex.cn.com" Icon={FaEnvelope} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="/blog" Icon={FaBrain} style={{ animationDelay: '1.8s' }} />
         </div>
       </div>
 
