@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image from "next/legacy/image"
+import IconLink from './IconLink';
 
 import BigDarkBackground from '../public/images/bg-bgd.svg'
 import BigDarkMoonBackground from '../public/images/bg-moon.svg'
@@ -14,6 +15,7 @@ import SmallLightBackground from '../public/images/lt-sm-bgd.svg'
 import LinkedInIcon from './svgs/LinkedInIcon'
 import GitHubIcon from './svgs/GitHubIcon'
 import EmailIcon from './svgs/EmailIcon'
+import BlogIcon from './svgs/BlogIcon'
 
 const Hero = ({ darkMode }) => {
 
@@ -37,15 +39,10 @@ const Hero = ({ darkMode }) => {
         <p className="w-full my-5 text-base dark:text-slate-400 text-slate-500 lg:w-8/12 opacity-0 animate-fadeUp" style={{ animationDelay: '1.6s' }}>I&apos;m an endurance athlete and product guy who specializes in building awesome experiences for users.</p>
 
         <div className="my-8 flex justify-start items-center">
-          <a className="mr-4 cursor-pointer" href="https://www.linkedin.com/in/smithavt14/" target="_blank" rel="noreferrer">
-            <LinkedInIcon className="opacity-0 animate-fadeUp fill-midnight dark:fill-white hover:fill-slate-400 dark:hover:fill-slate-400 transition" style={{ animationDelay: '1.8s' }} />
-          </a>
-          <a className="cursor-pointer mr-4" href="https://github.com/smithavt14" target="_blank" rel="noreferrer">
-            <GitHubIcon className="opacity-0 animate-fadeUp fill-midnight dark:fill-white hover:fill-slate-400 dark:hover:fill-slate-400 transition" style={{ animationDelay: '1.8s' }} />
-          </a>
-          <a className="cursor-pointer" href="mailto:hello@alex.cn.com">
-            <EmailIcon className="opacity-0 animate-fadeUp fill-midnight dark:fill-white hover:fill-slate-400 dark:hover:fill-slate-400 transition" style={{ animationDelay: '1.8s' }} />
-          </a>
+          <IconLink href="https://www.linkedin.com/in/smithavt14/" target="_blank" rel="noreferrer" Icon={LinkedInIcon} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="https://github.com/smithavt14" target="_blank" rel="noreferrer" Icon={GitHubIcon} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="mailto:hello@alex.cn.com" Icon={EmailIcon} style={{ animationDelay: '1.8s' }} />
+          <IconLink href="/blog" Icon={BlogIcon} style={{ animationDelay: '1.8s' }} />
         </div>
       </div>
 
