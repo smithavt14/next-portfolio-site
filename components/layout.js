@@ -1,12 +1,19 @@
-import Navbar from "./Navbar";
+import PageHead from '@components/Head';
+import Navbar from '@components/Navbar';
+import useDarkMode from '@hooks/useDarkMode';
 
 const Layout = ({ children }) => {
-  return (
-    <>
-      <Navbar />
-      <main>{children}</main>
-    </>
-  );
-}
+  const [darkMode, toggleDarkMode] = useDarkMode();
 
-export default Layout;
+  return (
+    <div className={`min-h-screen flex flex-col justify-center select-none ${darkMode ? 'dark bg-midnight' : 'bg-sky-100'}`}>
+      <PageHead />
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <main className="flex-grow">
+        {typeof children === 'function' ? children({ darkMode }) : children}
+      </main>
+    </div>
+  );
+};
+
+export default Layout

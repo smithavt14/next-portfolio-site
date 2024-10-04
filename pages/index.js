@@ -1,18 +1,11 @@
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import PageHead from '../components/Head';
-import useDarkMode from '../hooks/useDarkMode';
+import Hero from '@components/Hero';
+import HeroBackground from '@components/HeroBackground';
 
-export default function Home() {
-  const [darkMode, toggleDarkMode] = useDarkMode();
-
-  const animationDelay = '2s'; // Set the desired animation delay
-
+export default function Home({ darkMode }) {
   return (
-    <div className={`select-none ${darkMode ? 'dark bg-midnight' : 'bg:'}`}>
-      <PageHead />
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} animationDelay={animationDelay} />
+    <div>
       <Hero darkMode={darkMode} />
+      <HeroBackground darkMode={darkMode} />
     </div>
   );
 }
