@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   const [darkMode, toggleDarkMode] = useDarkMode();
 
   return (
-    <div className={`min-h-screen flex flex-col justify-center select-none ${darkMode ? 'dark bg-midnight' : 'bg-sky-100'}`}>
+    <div className={`min-h-screen flex flex-col justify-center select-none bg-gradient-to-tr dark:from-midnight dark:to-deepnight from-sky-100 to-sky-300`}>
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main className="flex-grow">
