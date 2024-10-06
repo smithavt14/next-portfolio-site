@@ -14,7 +14,7 @@ const Blog = ({ posts, darkMode }) => {
     <section
       id="blog"
       onAnimationEnd={(event) => endAnimation(event)}
-      className="relative flex flex-col h-screen w-screen box-border pt-48 px-6 md:px-12 lg:px-24 xl:px-48">
+      className="relative flex flex-col justify-center box-border z-20 mb-32 px-6 md:px-12 lg:px-24 xl:px-48">
       
       <Header style={{ animationDelay: '.2s' }}>
         {"There's a Raptor in my Cereal"}

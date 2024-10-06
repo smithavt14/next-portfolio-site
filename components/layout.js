@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
     <div className={`min-h-screen flex flex-col justify-center select-none bg-gradient-to-tr dark:from-midnight dark:to-deepnight from-sky-100 to-sky-300`}>
       <PageHead />
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="flex-grow">
+      <main>
         {typeof children === 'function' ? children({ darkMode }) : children}
       </main>
     </div>
