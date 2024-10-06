@@ -9,24 +9,67 @@ import BigLightCloud2 from '../public/images/lt-bg-bgd-cloud-2.svg';
 import SmallDarkBackground from '../public/images/sm-bgd.svg';
 import SmallLightBackground from '../public/images/lt-sm-bgd.svg';
 
-const HeroBackground = ({ darkMode }) => {
+const HeroBackground = () => {
 
     return (
         <section id="hero-background" className="absolute inset-0 w-full h-full z-10">
-        {/* Dark Background + Moon */}
-        <Image src={BigDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`z-10 ${darkMode ? "sm:visible" : "invisible"}`} />
-        <div className="absolute h-full w-1/2 right-0">
-            <Image src={BigDarkMoonBackground} layout='fill' objectFit='cover' objectPosition="10vh 0" className={`animate-spin z-0 ${darkMode ? "sm:visible" : "invisible"}`} />
-        </div>
 
-        {/* Light Background + Clouds */}
-        <Image src={BigLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`z-0 ${darkMode ? "invisible" : "sm:visible"}`} />
-        <Image src={BigLightCloud1} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightFast z-0 ${darkMode ? "invisible" : "sm:visible"}`} />
-        <Image src={BigLightCloud2} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`animate-shiftRightSlow z-0 ${darkMode ? "invisible" : "sm:visible"}`} />
+            <Image
+                src={BigDarkBackground}
+                layout='fill'
+                objectFit='cover'
+                objectPosition='bottom 0px left 0px'
+                className="z-10 invisible dark:sm:visible"
+            />
 
-        {/* Mobile Backgrounds */}
-        <Image src={SmallDarkBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "" : "invisible"}`} />
-        <Image src={SmallLightBackground} layout='fill' objectFit='cover' objectPosition='bottom 0px left 0px' className={`sm:invisible z-0 ${darkMode ? "invisible" : ""}`} />
+            <div className="absolute h-full w-1/2 right-0">
+                <Image
+                    src={BigDarkMoonBackground}
+                    layout='fill'
+                    objectFit='cover'
+                    objectPosition="10vh 0"
+                    className="animate-spin z-0 invisible dark:sm:visible"
+                />
+            </div>
+
+            {/* Light Background + Clouds */}
+            <Image
+                src={BigLightBackground}
+                layout='fill'
+                objectFit='cover'
+                objectPosition='bottom 0px left 0px'
+                className="z-0 sm:visible dark:invisible"
+            />
+            <Image
+                src={BigLightCloud1}
+                layout='fill'
+                objectFit='cover'
+                objectPosition='bottom 0px left 0px'
+                className="animate-shiftRightFast z-0 sm:visible dark:invisible"
+            />
+            <Image
+                src={BigLightCloud2}
+                layout='fill'
+                objectFit='cover'
+                objectPosition='bottom 0px left 0px'
+                className="animate-shiftRightSlow z-0 sm:visible dark:invisible"
+            />
+
+            {/* Mobile Backgrounds */}
+            <Image
+                src={SmallDarkBackground}
+                layout='fill'
+                objectFit='cover'
+                objectPosition='bottom 0px left 0px'
+                className="z-0 invisible dark:visible dark:sm:invisible"
+            />
+            <Image
+                src={SmallLightBackground}
+                layout='fill'
+                objectFit='cover'
+                objectPosition='bottom 0px left 0px'
+                className="z-0 visible dark:invisible sm:invisible"
+            />
         </section>
     );
 };
