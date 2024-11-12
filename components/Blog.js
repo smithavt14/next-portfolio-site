@@ -1,25 +1,44 @@
-import React from 'react';
+import Link from 'next/link';
+import Header from '@components/Header';
+import Subtitle from '@components/Subtitle';
+import Body from '@components/Body';
 
-const Blog = () => {
-    const posts = [
-        { id: 1, title: 'First Post', content: 'This is the content of the first post.' },
-        { id: 2, title: 'Second Post', content: 'This is the content of the second post.' },
-        { id: 3, title: 'Third Post', content: 'This is the content of the third post.' },
-    ];
+const Blog = ({ posts, darkMode }) => {
 
-    return (
-        <div>
-            <h1>Blog</h1>
-            <ul>
-                {posts.map(post => (
-                    <li key={post.id}>
-                        <h2>{post.title}</h2>
-                        <p>{post.content}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-};
+  const endAnimation = (event) => {
+    event.target.classList.remove('opacity-0')
+    event.target.classList.add('opacity-100')
+  }
+
+  return (
+    <section
+      id="blog"
+      onAnimationEnd={(event) => endAnimation(event)}
+      className="relative flex flex-col justify-center box-border z-20 mb-32 px-6 md:px-12 lg:px-24 xl:px-48">
+      
+      <Header style={{ animationDelay: '.2s' }}>
+        {"There's a Raptor in my Cereal"}
+      </Header>
+      
+      <Subtitle style={{ animationDelay: '.4s' }}>
+        {"Welcome to my blog! Here, I share my thoughts on various topics related to web development, technology, and more."}
+      </Subtitle>
+      
+      <ol>
+        {posts.map((post) => (
+          <li
+            key={post.slug}
+            className="w-full my-5 text-base dark:text-slate-400 text-slate-500 lg:w-8/12 opacity-0 animate-fadeUp"
+            style={{ animationDelay: '.6s' }}
+          >
+            <Link href={`/blog/${post.slug}`}>
+              <Body>{post.frontMatter.title}</Body>
+            </Link>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
 
 export default Blog;
