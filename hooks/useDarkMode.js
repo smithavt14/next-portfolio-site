@@ -1,24 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 const useDarkMode = () => {
-  // Start with a default dark mode state
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-  };
-
-  // Effect to add/remove the dark class based on state
   useEffect(() => {
-    if (darkMode) {
+    // Get initial value from localStorage or system preference
+    const isDark = localStorage.getItem('darkMode') === 'true' ||
+      (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    setDarkMode(isDark);
+    setIsInitialized(true);
+    
+    if (isDark) {
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
     }
-  }, [darkMode]);
+  }, []);
 
-  return [darkMode, toggleDarkMode];
+  const toggleDarkMode = useCallback(() => {
+    setDarkMode(prev => {
+      const newValue = !prev;
+      localStorage.setItem('darkMode', String(newValue));
+      
+      if (newValue) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      
+      return newValue;
+    });
+  }, []);
+
+  return [darkMode, toggleDarkMode, isInitialized];
 };
 
 export default useDarkMode;
