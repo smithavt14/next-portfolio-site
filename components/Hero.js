@@ -25,7 +25,7 @@ const Hero = () => {
         <IconLink href="https://www.linkedin.com/in/smithavt14/" target="_blank" rel="noreferrer" Icon={FaLinkedin} style={{ animationDelay: '1.8s' }} />
         <IconLink href="https://github.com/smithavt14" target="_blank" rel="noreferrer" Icon={FaGithub} style={{ animationDelay: '1.8s' }} />
         <IconLink href="mailto:hello@alex.cn.com" Icon={FaEnvelope} style={{ animationDelay: '1.8s' }} />
-        <IconLink href="/blog" Icon={FaBrain} style={{ animationDelay: '1.8s' }} />
+        {/* <IconLink href="/blog" Icon={FaBrain} style={{ animationDelay: '1.8s' }} /> */}
       </div>
     </section>
   );
