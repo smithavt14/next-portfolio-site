@@ -20,3 +20,24 @@ a {
   box-sizing: border-box;
 }
 
+.gradient-transition {
+  background-size: 200% 200%;
+  transition: background-position 1s ease-in-out, background-image 1s ease-in-out;
+}
+
+.gradient-moon {
+  background-image: linear-gradient(to top right, #1C0C32, #0A0412);
+}
+
+.gradient-sun {
+  background-image: linear-gradient(to top right, #E0F2FE, #7DD3FC);
+}
+
+.gradient-mountain {
+  background-image: linear-gradient(to top right, #F1D197, #66267A);
+}
+
+.gradient-tree {
+  background-image: linear-gradient(to top right, #D6E8D8, #FFFFFF);
+}
+

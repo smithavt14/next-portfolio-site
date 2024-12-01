@@ -1,23 +1,19 @@
 import PageHead from '@components/Head';
 import Navbar from '@components/Navbar';
-import useDarkMode from '@hooks/useDarkMode';
+import { useBackground } from '@hooks/useBackground';
 
 const Layout = ({ children }) => {
-  const [darkMode, toggleDarkMode, isInitialized] = useDarkMode();
-
-  if (!isInitialized) {
-    return null; // or return a loading spinner if you prefer
-  }
+  const { gradient, isDark } = useBackground();
 
   return (
-    <div className={`min-h-screen flex flex-col justify-center select-none bg-gradient-to-tr dark:from-midnight dark:to-deepnight from-sky-100 to-sky-300`}>
+    <div className={`min-h-screen flex flex-col justify-center select-none -z-10 ${gradient} ${isDark ? 'dark' : ''}`}>
       <PageHead />
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar />
       <main>
-        {typeof children === 'function' ? children({ darkMode }) : children}
+        {children}
       </main>
     </div>
   );
 };
 
-export default Layout
+export default Layout;
