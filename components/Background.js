@@ -1,64 +1,33 @@
-import Image from 'next/image';
 import { useBackground } from '@hooks/useBackground';
-import Stars from './Stars';
-import Smoke from './Smoke';
+import Stars from './backgrounds/animated/Stars';
+import Smoke from './backgrounds/animated/Smoke';
+import TreeBackgroundSvg from './backgrounds/base/Tree';
+import SunBackgroundSvg from './backgrounds/base/Sun';
+import MoonBackgroundSvg from './backgrounds/base/Moon';
+import MountainBackgroundSvg from './backgrounds/base/Mountain';
+import Dudes from './backgrounds/base/Dudes';
 
 const Background = () => {
     const { activeBackground } = useBackground();
 
     const backgrounds = {
         sun: {
-            base: '/images/sun-bg-lg.svg',
-            animated: [
-                {
-                    src: '/images/sun-bg-lg-clouds.svg',
-                    animationClass: 'animate-shiftRightFast',
-                    divClasses: '',
-                    imageClasses: 'z-20',
-                }, 
-                {
-                    src: '/images/sun-bg-lg-clouds-2.svg',
-                    animationClass: 'animate-shiftRightSlow',
-                    divClasses: '',
-                    imageClasses: 'z-10',
-                }
-            ]
+            base: <SunBackgroundSvg />,
+            animated: []
         },
         moon: {
-            base: '/images/moon-bg-lg.svg',
-            animated: [
-                {
-                    src: '/images/moon-bg-lg-moon.svg',
-                    animationClass: 'animate-spin',
-                    divClasses: 'absolute h-full w-6/12 right-0',
-                    imageClasses: 'object-none z-10 object-right',
-                }
-            ],
+            base: <MoonBackgroundSvg />,
+            animated: [],
             extraElements: <Stars />
         },
         tree: {
-            base: null,
+            base: <TreeBackgroundSvg />,
             animated: [],
-            extraElements: (
-                <>
-                    <Smoke />
-                    <object 
-                        data="/images/tree-bg-lg.svg" 
-                        type="image/svg+xml"
-                        className="absolute bottom-0 w-full object-bottom z-10"
-                        aria-label="Tree background"
-                    />
-                </>
-            )
+            extraElements: <Smoke />
         },
         mountain: {
-            base: '/images/mountain-bg-lg.svg',
-            animated: [{
-                src: '/images/mountain-bg-lg-sun.svg',
-                animationClass: 'animate-shiftDownSlow',
-                customClasses: '',
-                zIndex: 10
-            }],
+            base: <MountainBackgroundSvg />,
+            animated: [],
             extraElements: <Stars />
         }
     };
@@ -68,52 +37,23 @@ const Background = () => {
             {Object.keys(backgrounds).map((bgKey) => (
                 <div
                     key={bgKey}
-                    className={`absolute inset-0 
-                        ${activeBackground === bgKey ? 'block' : 'hidden'}
-                    `}
+                    className={`absolute inset-0 ${activeBackground === bgKey ? 'block' : 'hidden'}`}
                 >
-                    {/* Extra Elements (like Stars) */}
                     {backgrounds[bgKey].extraElements}
-
-                    {/* Animated Layers */}
                     {backgrounds[bgKey].animated.map((layer, index) => (
-                        <div key={`${bgKey}-layer-${index}`} className={`${layer.divClasses}`}>
-                            <Image
-                                src={layer.src}
-                                alt={`${bgKey} animated elements ${index + 1}`}
-                                fill
-                                className={`object-contain object-bottom ${layer.animationClass} ${layer.imageClasses}`}
-                                quality={100}
-                            />
+                        <div key={`${bgKey}-layer-${index}`}>
+                            {layer.component}
                         </div>
                     ))}
-
-                    {/* Base Background Layer */}
-                    {backgrounds[bgKey].base && (
-                        <div className="absolute inset-0 z-10">
-                            <Image
-                                src={backgrounds[bgKey].base}
-                                alt={`${bgKey} background`}
-                                fill
-                                priority='true'
-                                className="object-contain object-bottom"
-                                quality={100}
-                            />
-                        </div>
-                    )}
+                    <div className="z-0 w-full h-auto absolute bottom-0 right-0">
+                        {backgrounds[bgKey].base}
+                    </div>
                 </div>
             ))}
-            
+
             {/* Fixed Dudes in Foreground */}
-            <div className="absolute bottom-[2%] left-[32%] h-72 w-72 z-30">
-                <Image
-                    src="/images/dudes.svg"
-                    alt="Little dudes"
-                    fill
-                    priority
-                    className="object-contain"
-                    quality={100}
-                />
+            <div className="absolute bottom-0 w-full h-auto z-30">
+                <Dudes />
             </div>
         </div>
     );
