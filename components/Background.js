@@ -23,7 +23,6 @@ const Background = () => {
         tree: {
             base: <TreeBackgroundSvg />,
             animated: [],
-            extraElements: <Smoke />
         },
         mountain: {
             base: <MountainBackgroundSvg />,

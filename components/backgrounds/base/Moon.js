@@ -6,7 +6,6 @@ const MoonBackgroundSvg = () => {
     const moonRef = useRef(null);
 
     useEffect(() => {
-        // Import and register the plugin only on the client side
         if (typeof window !== 'undefined') {
             const { MotionPathPlugin } = require('gsap/MotionPathPlugin');
             gsap.registerPlugin(MotionPathPlugin);
