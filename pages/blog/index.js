@@ -1,6 +1,6 @@
 import Header from '@components/blog/Header';
 import Subtitle from '@components/blog/Subtitle';
-import Body from '@/components/blog/Body';
+import Body from '@components/blog/Body';
 import Link from 'next/link';
 import { getAllPosts } from '@lib/posts';
 
