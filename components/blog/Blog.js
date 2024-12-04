@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Header from '@components/Header';
 import Subtitle from '@components/Subtitle';
-import Body from '@components/Body';
+import Body from '~/components/blog/Body';
 
 const Blog = ({ posts, darkMode }) => {
 

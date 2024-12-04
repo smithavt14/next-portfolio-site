@@ -1,38 +1,21 @@
-import { useEffect, useState, useCallback } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-const useDarkMode = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [isInitialized, setIsInitialized] = useState(false);
+const DarkModeContext = createContext();
 
-  useEffect(() => {
-    // Get initial value from localStorage or system preference
-    const isDark = localStorage.getItem('darkMode') === 'true' ||
-      (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    
-    setDarkMode(isDark);
-    setIsInitialized(true);
-    
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
+export function DarkModeProvider({ children }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const toggleDarkMode = useCallback(() => {
-    setDarkMode(prev => {
-      const newValue = !prev;
-      localStorage.setItem('darkMode', String(newValue));
-      
-      if (newValue) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-      
-      return newValue;
-    });
-  }, []);
+  return (
+    <DarkModeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+      {children}
+    </DarkModeContext.Provider>
+  );
+}
 
-  return [darkMode, toggleDarkMode, isInitialized];
-};
-
-export default useDarkMode;
+export function useDarkMode() {
+  const context = useContext(DarkModeContext);
+  if (context === undefined) {
+    throw new Error('useDarkMode must be used within a DarkModeProvider');
+  }
+  return context;
+}

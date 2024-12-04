@@ -2,8 +2,23 @@
 module.exports = {
   darkMode: 'class',
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}"
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './hooks/**/*.{js,ts,jsx,tsx}',
+  ],
+  safelist: [
+    // Moon gradient
+    'from-[#1C0C32]',
+    'to-[#0A0412]',
+    // Sun gradient
+    'from-[#E0F2FE]',
+    'to-[#7DD3FC]',
+    // Mountain gradient
+    'from-[#F1D197]',
+    'to-[#66267A]',
+    // Tree gradient
+    'from-[#D6E8D8]',
+    'to-[#FFFFFF]',
   ],
   theme: {
     fontSize: {
@@ -73,7 +88,7 @@ module.exports = {
             transform: 'translsatex(0px)',
           },
           '100%': {
-            transform: 'translatex(800px)'
+            transform: 'translatex(400px)'
           }
         },
         shiftRightSlow: {
@@ -81,7 +96,47 @@ module.exports = {
             transform: 'translsatex(0px)',
           },
           '100%': {
-            transform: 'translatex(200px)'
+            transform: 'translatex(400px)'
+          }
+        },
+        shiftDownSlow: {
+          '0%': {
+            transform: 'translsatey(0px)',
+          },
+          '100%': {
+            transform: 'translatey(200px)'
+          }
+        },
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-20px)',
+          },
+        },
+        twinkle: {
+          '0%, 100%': {
+            opacity: 1,
+            filter: 'brightness(1)'
+          },
+          '50%': {
+            opacity: 0.3,
+            filter: 'brightness(0.5)'
+          }
+        },
+        billowUp: {
+          '0%': {
+            transform: 'translateY(0) scale(1)',
+            opacity: '0.8'
+          },
+          '50%': {
+            transform: 'translateY(-100px) scale(1.5)',
+            opacity: '0.5'
+          },
+          '100%': {
+            transform: 'translateY(-200px) scale(2)',
+            opacity: '0'
           }
         }
       },
@@ -90,8 +145,12 @@ module.exports = {
         shiftUp: 'shiftUp 0.2s ease-out',
         bounce: 'otherBounce 1s infinite',
         spin: 'spin 60s linear infinite',
-        shiftRightSlow: 'shiftRightSlow 60s linear infinite',
-        shiftRightFast: 'shiftRightFast 60s linear infinite'
+        shiftRightSlow: 'shiftRightSlow 90s linear infinite',
+        shiftRightFast: 'shiftRightFast 30s linear infinite',
+        shiftDownSlow: 'shiftDownSlow 20s linear',
+        float: 'float 6s ease-in-out infinite',
+        twinkle: 'twinkle 4s ease-in-out infinite',
+        billowUp: 'billowUp 8s ease-out infinite'
       }
     },
   },
