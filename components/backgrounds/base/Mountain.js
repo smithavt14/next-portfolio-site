@@ -2,11 +2,30 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const MountainBackgroundSvg = () => {
-    const smokeStart = useRef(null)    
-    
+    const sunRef = useRef(null)
+
+    useEffect(() => {
+        gsap.to(sunRef.current, {
+            y: 250,
+            duration: 20,
+            repeat: -1,
+            ease: "none",
+            yoyo: true,
+            repeatDelay: 0
+        });
+    }, []);
+
     return (
         <svg viewBox="0 0 1280 831" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_24_70)">
+                <g ref={sunRef}>
+                    <g filter="url(#filter0_f_24_70)">
+                        <ellipse cx="1093.1" cy="533.505" rx="133.103" ry="117.505" fill="#F0B86E" />
+                    </g>
+                    <g filter="url(#filter1_f_24_70)">
+                        <ellipse cx="1091.17" cy="531.796" rx="95.3501" ry="84.1763" fill="#FFF1D7" />
+                    </g>
+                </g>
                 <path d="M1148 786.5L1068.5 681.5C1068.5 681.5 987.363 582.978 973.34 568C932.476 524.352 855.84 442 855.84 442C855.84 442 629.827 610.723 603.296 633.801C609.608 628.255 596.963 639.307 603.296 633.801C575.488 660.649 415.203 740.167 420.296 789.801C421.551 802.036 419.214 780.027 420.296 789.801C418.734 834.729 1148 786.5 1148 786.5Z" fill="#8B0152" />
                 <path d="M1117.06 675.885C1135.85 661.67 1267 503 1267 503L1330.5 594C1330.5 594 1370.66 736.678 1373.97 740.776C1375.93 752.93 1275.1 769.507 1138.31 784L1117.06 675.885Z" fill="#C8588E" />
                 <path d="M1117.06 675.885L1267 503L1330.5 594C1330.5 594 1370.66 736.678 1373.97 740.776C1375.93 752.93 1275.1 769.507 1138.31 784L1117.06 675.885Z" fill="#C8588E" />
@@ -18,6 +37,16 @@ const MountainBackgroundSvg = () => {
                 <path d="M1281.09 556.5L1292.5 570.5L1298.09 684C1298.09 684 1274.09 656.5 1273.59 651.5C1273.09 646.5 1281.09 621.5 1281.09 621.5C1281.09 621.5 1261.09 614 1259.09 611C1257.09 608 1281.09 556.5 1281.09 556.5Z" fill="#8B0152" />
             </g>
             <defs>
+                <filter id="filter0_f_24_70" x="918" y="374" width="350.206" height="319.01" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="21" result="effect1_foregroundBlur_24_70" />
+                </filter>
+                <filter id="filter1_f_24_70" x="984.817" y="436.62" width="212.7" height="190.353" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                    <feGaussianBlur stdDeviation="5.5" result="effect1_foregroundBlur_24_70" />
+                </filter>
                 <clipPath id="clip0_24_70">
                     <rect width="1280" height="831" fill="white" />
                 </clipPath>
