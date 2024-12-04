@@ -1,8 +1,8 @@
-import Header from '@components/Header';
-import Subtitle from '@components/Subtitle';
+import Header from '@components/blog/Header';
+import Subtitle from '@components/blog/Subtitle';
 import Body from '@/components/blog/Body';
 import Link from 'next/link';
-import { getAllPosts } from '../../lib/posts';
+import { getAllPosts } from '@lib/posts';
 
 export async function getStaticProps() {
     const posts = getAllPosts();

@@ -1,5 +1,5 @@
 import { getAllPostSlugs, getPostData } from '../../lib/posts'
-import BlogLayout from '../../components/BlogLayout'
+import BlogLayout from '@components/blog/BlogLayout'
 
 export default function Post({ frontMatter, content }) {
   return (
