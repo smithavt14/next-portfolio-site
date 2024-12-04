@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useBackground } from '@hooks/useBackground';
 import gsap from 'gsap';
 
-const TreeBackgroundSvg = () => {
+const TreeDesktop = () => {
     const smokeStartRef = useRef(null);
     const smokeContainerRef = useRef(null);
     const { activeBackground } = useBackground();
@@ -261,4 +261,4 @@ const TreeBackgroundSvg = () => {
     );
 };
 
-export default TreeBackgroundSvg; 
+export default TreeDesktop; 

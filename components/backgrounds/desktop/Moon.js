@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-const MoonBackgroundSvg = () => {
+const MoonDesktop = () => {
     const moonRef = useRef(null);
 
     useEffect(() => {
@@ -91,4 +91,4 @@ const MoonBackgroundSvg = () => {
     );
 };
 
-export default MoonBackgroundSvg;
+export default MoonDesktop;

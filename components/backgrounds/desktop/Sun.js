@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-const SunBackgroundSvg = () => {
+const SunDesktop = () => {
     const cloud1 = useRef(null);
     const cloud2 = useRef(null);
     const cloud3 = useRef(null);
@@ -51,4 +51,4 @@ const SunBackgroundSvg = () => {
     )
 };
 
-export default SunBackgroundSvg;
+export default SunDesktop;

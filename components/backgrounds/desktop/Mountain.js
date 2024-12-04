@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-const MountainBackgroundSvg = () => {
+const MountainDesktop = () => {
     const sunRef = useRef(null)
 
     useEffect(() => {
@@ -55,4 +55,4 @@ const MountainBackgroundSvg = () => {
     );
 };
 
-export default MountainBackgroundSvg;
+export default MountainDesktop;
