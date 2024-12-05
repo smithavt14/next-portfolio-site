@@ -41,18 +41,18 @@ const Background = () => {
     };
 
     return (
-        <div id="background" className="fixed inset-0 z-0 overflow-hidden">
+        <div id="background-container" className="fixed inset-0 z-0 overflow-hidden">
             {Object.keys(backgrounds).map((bgKey) => (
                 <div key={bgKey} className={`absolute inset-0 ${activeBackground === bgKey ? 'block' : 'hidden'}`}>
                     {backgrounds[bgKey].extraElements}
-                    <div className="z-0 w-full h-auto absolute bottom-0 right-0">
+                    <div id="background" className="z-0 w-full h-auto absolute bottom-0 right-0">
                         {backgrounds[bgKey].base}
                     </div>
                 </div>
             ))}
 
             {/* Fixed Dudes in Foreground */}
-            <div className="absolute bottom-0 w-full h-auto z-30">
+            <div id="little-dudes"className="absolute bottom-0 w-full h-auto z-30">
                 <ResponsiveComponent
                     MobileComponent={DudesMobile}
                     DesktopComponent={DudesDesktop}

@@ -17,7 +17,7 @@ const Stars = () => {
     }, []); // Empty dependency array means this runs once on mount
 
     return (
-        <div className="absolute w-full h-full inset-0 overflow-hidden -z-10">
+        <div id="stars" className="absolute w-full h-full inset-0 overflow-hidden -z-10">
             {stars.map(star => (
                 <div
                     key={star.id}

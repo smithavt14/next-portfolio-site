@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <section
       onAnimationEnd={(event) => endAnimation(event)}
-      className="relative h-full flex flex-col box-border z-20 space-y-6">
+      className="relative h-full flex flex-col box-border z-20 space-y-5">
       <p className="opacity-0 animate-fadeUp text-base text-midnight dark:text-white" style={{ animationDelay: '1s' }}>
         Hi, my name is
       </p>

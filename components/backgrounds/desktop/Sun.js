@@ -8,22 +8,16 @@ const SunDesktop = () => {
     const cloud3 = useRef(null);
     
     useEffect(() => {
-        gsap.to(cloud1.current, {
-            x: 200,
-            duration: 40,
-            ease: "none",
-            repeat: -1,
-            yoyo: true
-        });
-    }, []); 
-
-    useEffect(() => {
-        gsap.to([cloud2.current, cloud3.current],{
-            x: 200,
-            duration: 20,
-            ease: "none",
-            repeat: -1,
-            yoyo: true
+        const clouds = [cloud1.current, cloud2.current, cloud3.current];
+        
+        clouds.forEach(cloud => {
+            gsap.to(cloud, {
+                x: 200,
+                duration: 10 + Math.random() * 50,
+                ease: "none",
+                repeat: -1,
+                yoyo: true
+            });
         });
     }, []);
 
