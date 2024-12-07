@@ -7,11 +7,11 @@ const Layout = ({ children }) => {
   const { gradient, isDark } = useBackground();
 
   return (
-    <main className={`fixed inset-0 overflow-hidden select-none ${gradient} ${isDark ? 'dark' : ''}`}>
+    <main className={`fixed inset-0 overflow-hidden select-none flex flex-col items-center justify-center ${gradient} ${isDark ? 'dark' : ''}`}>
       <PageHead />
-      <Navbar />
       <Background />
-      <div className="relative h-full px-6 py-24 md:py-36 md:px-12 lg:px-24 xl:px-40 lg:py-36">
+      <div className="relative h-full px-6 md:px-12 w-full max-w-screen-xl">
+        <Navbar />
         {children}
       </div>
     </main>

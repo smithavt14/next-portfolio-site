@@ -31,7 +31,7 @@ const Navbar = ({ animationDelay }) => {
     <nav
       onAnimationEnd={(event) => endAnimation(event)}
       style={{ justifyContent, animationDelay }}
-      className="transition-all duration-200 w-screen fixed inset-x-0 top-0 p-6 md:p-12 lg:px-24 xl:px-48 text-midnight dark:text-white flex items-center z-50 opacity-0 animate-fadeUp">
+      className="duration-200 w-full max-w-screen-xl p-6 md:p-12  text-midnight dark:text-white flex items-center z-50 opacity-0 animate-fadeUp transition-all">
       {renderBackButton()}
       <BackgroundPicker />
     </nav>
