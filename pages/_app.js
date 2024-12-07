@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '@styles/globals.css';
 import Layout from '@components/Layout';
 import { BackgroundProvider } from '@hooks/useBackground';
 import GoogleAnalytics from '@components/GoogleAnalytics';
