@@ -73,16 +73,6 @@ module.exports = {
             marginBottom: '8px'
           }
         },
-        fadeUp: {
-          '0%': {
-            transform: 'translatey(40px)',
-            opacity: '0'
-          },
-          '100%': {
-            transform: 'translatey(0px)',
-            opacity: '1'
-          }
-        },
         shiftRightFast: {
           '0%': {
             transform: 'translsatex(0px)',
@@ -141,7 +131,6 @@ module.exports = {
         }
       },
       animation: {
-        fadeUp: 'fadeUp 0.3s ease-out',
         shiftUp: 'shiftUp 0.2s ease-out',
         bounce: 'otherBounce 1s infinite',
         spin: 'spin 60s linear infinite',
