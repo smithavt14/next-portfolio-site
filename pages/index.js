@@ -1,22 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import IconLink from '@components/IconLink';
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
   const sectionRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const section = sectionRef.current;
     // Get main section children and the icon container's children
     const iconContainer = section.querySelector('#icon-links');
     const elements = [...section.children, ...(iconContainer ? iconContainer.children : [])];
-
-    console.log(elements);
-
-    gsap.set(elements, {
+    
+    setIsLoading(false);
+    
+    gsap.set(elements, { 
       opacity: 0,
-      y: 20
+      y: 20 
     });
 
     gsap.to(elements, {
@@ -32,7 +33,7 @@ export default function Home() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-full flex flex-col box-border z-20 space-y-5 xl:pt-10">
+      className={`relative h-full flex flex-col box-border z-20 space-y-5 xl:pt-10 ${ isLoading ? 'opacity-0' : '' }`}>
       <p className="text-base text-midnight dark:text-white">
         Hi, my name is
       </p>
