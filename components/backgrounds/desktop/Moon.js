@@ -1,9 +1,10 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 const MoonDesktop = () => {
     const moonRef = useRef(null);
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -27,7 +28,8 @@ const MoonDesktop = () => {
                     end: 0.4
                 },
                 ease: "none",
-                repeat: -1
+                repeat: -1,
+                onStart: () => setIsReady(true)
             });
         } catch (error) {
             console.error('GSAP animation error:', error);
@@ -37,7 +39,12 @@ const MoonDesktop = () => {
     }, []);
 
     return (
-        <svg viewBox="0 0 1280 832" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg 
+            className={`transition-opacity duration-500 ${isReady ? 'opacity-100' : 'opacity-0'}`}
+            viewBox="0 0 1280 832" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <g clipPath="url(#clip0_24_67)">
                 <path id="gravity" d="M1417.03 542.348C1400.18 581.902 1349.33 602.73 1280.43 604.208C1211.57 605.685 1124.88 587.826 1036.7 550.258C948.522 512.689 875.591 462.544 828.955 411.862C782.285 361.141 762.085 310.047 778.937 270.493C795.789 230.939 846.63 210.112 915.539 208.633C984.398 207.156 1071.08 225.015 1159.26 262.584C1247.44 300.152 1320.37 350.297 1367.01 400.98C1413.68 451.7 1433.88 502.795 1417.03 542.348Z" stroke="black" strokeOpacity="0.02" />
                 <path d="M1315 504C1315 605.068 1233.07 687 1132 687C1030.93 687 949 605.068 949 504C949 402.932 1030.93 321 1132 321C1233.07 321 1315 402.932 1315 504Z" fill="#381956" />

@@ -1,9 +1,10 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 
 const MoonMobile = () => {
     const mobileMoonRef = useRef(null);
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -27,7 +28,8 @@ const MoonMobile = () => {
                     end: 0.4
                 },
                 ease: "none",
-                repeat: -1
+                repeat: -1,
+                onStart: () => setIsReady(true)
             });
         } catch (error) {
             console.error('GSAP animation error:', error);
@@ -37,7 +39,11 @@ const MoonMobile = () => {
     }, []);
 
     return (
-        <svg viewBox="0 0 390 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            className={`transition-opacity duration-500 ${isReady ? 'opacity-100' : 'opacity-0'}`}
+            viewBox="0 0 390 660"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path opacity="0.2" d="M342.05 657.676L352.561 657.954C349.106 659.169 345.6 659.007 342.05 657.676L-172.641 644.052L-172.64 599.954V570.94L-173.116 571.144L-174.134 571.551L-173.591 564.688L-172.573 551.439L-171.419 536.286C-171.419 536.286 -113.247 495.585 -41.3642 491.372C5.40444 488.654 62.4224 525.686 104.303 523.919C146.184 522.152 164.987 479.141 209.379 467.454C250.363 456.664 299.355 641.669 342.05 657.676Z" fill="#5A2489" />
             <path opacity="0.2" d="M374.886 658.563L387.257 658.891C383.393 660.251 379.252 660.053 374.886 658.563L-172.641 644.052L-172.64 599.954L-170.401 570.124L-169.857 562.446L-169.111 552.526C-169.111 552.526 -103.472 506.252 -31.5897 510.261C27.3294 513.523 64.0511 550.759 105.933 548.992C147.813 547.225 171.096 502.719 215.556 491.1C256.136 480.417 328.397 642.704 374.886 658.563Z" fill="#5A2878" />
             <path d="M241.515 655.538L-181.896 659.652V642.236V591.119V557.328C-181.896 557.328 -122.284 561.295 -106.02 574.115C-77.7871 596.353 -63.2128 613.911 -36.2844 617.552C-31.3736 618.184 -26.4165 618.343 -21.477 618.026C17.2661 615.81 9.05651 589.537 45.9588 569.356C47.7997 568.328 49.7179 567.457 51.6361 566.665C87.003 551.946 124.442 576.637 124.442 576.637L241.515 655.538Z" fill="url(#paint0_linear_110_3453)" />

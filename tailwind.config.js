@@ -128,6 +128,14 @@ module.exports = {
             transform: 'translateY(-200px) scale(2)',
             opacity: '0'
           }
+        },
+        fadeIn: {
+          '0%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '1'
+          }
         }
       },
       animation: {
@@ -139,7 +147,8 @@ module.exports = {
         shiftDownSlow: 'shiftDownSlow 20s linear',
         float: 'float 6s ease-in-out infinite',
         twinkle: 'twinkle 4s ease-in-out infinite',
-        billowUp: 'billowUp 8s ease-out infinite'
+        billowUp: 'billowUp 8s ease-out infinite',
+        fadeIn: 'fadeIn 0.3s ease-in-out'
       }
     },
   },

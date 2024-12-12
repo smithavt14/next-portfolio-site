@@ -41,7 +41,7 @@ const Background = () => {
     };
 
     return (
-        <div id="background-container" className="fixed inset-0 z-0 overflow-hidden">
+        <div id="background-container" className="fixed inset-0 z-0 overflow-hidden animate-fadeIn">
             {Object.keys(backgrounds).map((bgKey) => (
                 <div key={bgKey} className={`absolute inset-0 ${activeBackground === bgKey ? 'block' : 'hidden'}`}>
                     {backgrounds[bgKey].extraElements}
