@@ -40,19 +40,20 @@ const Background = () => {
         }
     };
 
+    const activeBackgroundConfig = backgrounds[activeBackground];
+
     return (
         <div id="background-container" className="fixed inset-0 z-0 overflow-hidden">
-            {Object.keys(backgrounds).map((bgKey) => (
-                <div key={bgKey} className={`absolute inset-0 ${activeBackground === bgKey ? 'block' : 'hidden'}`}>
-                    {backgrounds[bgKey].extraElements}
-                    <div id="background" className="z-0 w-full h-auto absolute bottom-0 right-0">
-                        {backgrounds[bgKey].base}
-                    </div>
+            {/* Only render the active background */}
+            <div className="absolute inset-0">
+                {activeBackgroundConfig?.extraElements}
+                <div id="background" className="z-0 w-full h-auto absolute bottom-0 right-0">
+                    {activeBackgroundConfig?.base}
                 </div>
-            ))}
+            </div>
 
             {/* Fixed Dudes in Foreground */}
-            <div id="little-dudes"className="absolute bottom-0 w-full h-auto z-30">
+            <div id="little-dudes" className="absolute bottom-0 w-full h-auto z-30">
                 <ResponsiveComponent
                     MobileComponent={DudesMobile}
                     DesktopComponent={DudesDesktop}
