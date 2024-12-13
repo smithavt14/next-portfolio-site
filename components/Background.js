@@ -43,7 +43,7 @@ const Background = () => {
     const activeBackgroundConfig = backgrounds[activeBackground];
 
     return (
-        <div id="background-container" className="fixed inset-0 z-0 overflow-hidden">
+        <div id="background-container" className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
             {/* Only render the active background */}
             <div className="absolute inset-0">
                 {activeBackgroundConfig?.extraElements}
