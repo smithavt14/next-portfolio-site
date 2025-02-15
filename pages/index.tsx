@@ -1,18 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import IconLink from '@components/IconLink';
+import { Background } from '@components/Background';
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import Background from '@components/Background';
 
 export default function Home() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const section = sectionRef.current;
+    if (!section) return;
+
     // Get main section children and the icon container's children
     const iconContainer = section.querySelector('#icon-links');
-    const elements = [...section.children, ...(iconContainer ? iconContainer.children : [])];
+    const elements = [...section.children, ...(iconContainer ? Array.from(iconContainer.children) : [])] as HTMLElement[];
 
     setIsLoading(false);
 
@@ -59,4 +61,4 @@ export default function Home() {
       </section>
     </>
   );
-}
+} 

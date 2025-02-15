@@ -1,17 +1,17 @@
 import { useBackground } from '@hooks/useBackground';
-import Stars from './backgrounds/animated/Stars';
+import Stars from './graphics/animated/Stars';
 // Import desktop components
-import TreeDesktop from './backgrounds/desktop/Tree';
-import SunDesktop from './backgrounds/desktop/Sun';
-import MoonDesktop from './backgrounds/desktop/Moon';
-import MountainDesktop from './backgrounds/desktop/Mountain';
-import DudesDesktop from './backgrounds/desktop/Dudes';
+import TreeDesktop from './graphics/desktop/Tree';
+import SunDesktop from './graphics/desktop/Sun';
+import MoonDesktop from './graphics/desktop/Moon';
+import MountainDesktop from './graphics/desktop/Mountain';
+import DudesDesktop from './graphics/desktop/Dudes';
 // Import mobile components
-import TreeMobile from './backgrounds/mobile/Tree';
-import SunMobile from './backgrounds/mobile/Sun';
-import MoonMobile from './backgrounds/mobile/Moon';
-import MountainMobile from './backgrounds/mobile/Mountain';
-import DudesMobile from './backgrounds/mobile/Dudes';
+import TreeMobile from './graphics/mobile/Tree';
+import SunMobile from './graphics/mobile/Sun';
+import MoonMobile from './graphics/mobile/Moon';
+import MountainMobile from './graphics/mobile/Mountain';
+import DudesMobile from './graphics/mobile/Dudes';
 
 const ResponsiveComponent = ({ MobileComponent, DesktopComponent }) => (
     <>

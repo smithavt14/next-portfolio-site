@@ -1,8 +1,9 @@
 import PageHead from '@components/Head';
 import Navbar from '@components/Navbar';
 import { useBackground } from '@hooks/useBackground';
+import { LayoutProps } from 'types';
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   const { gradient, isDark } = useBackground();
 
   return (
@@ -16,4 +17,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default Layout; 
