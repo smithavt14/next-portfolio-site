@@ -1,8 +1,16 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
+interface Star {
+    id: number;
+    top: string;
+    left: string;
+    scale: number;
+    delay: number;
+}
 
 const Stars = () => {
-    const [stars, setStars] = useState([]);
+    const [stars, setStars] = useState<Star[]>([]);
 
     useEffect(() => {
         // Generate stars only on client-side
@@ -14,7 +22,7 @@ const Stars = () => {
             delay: Math.random() * 2
         }));
         setStars(generatedStars);
-    }, []); // Empty dependency array means this runs once on mount
+    }, []);
 
     return (
         <div id="stars" className="absolute w-full h-full inset-0 overflow-hidden -z-10">

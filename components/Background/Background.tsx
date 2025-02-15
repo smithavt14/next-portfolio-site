@@ -1,3 +1,4 @@
+import React from 'react';
 import { useBackground } from '@hooks/useBackground';
 import Stars from './graphics/animated/Stars';
 // Import desktop components
@@ -13,17 +14,29 @@ import MoonMobile from './graphics/mobile/Moon';
 import MountainMobile from './graphics/mobile/Mountain';
 import DudesMobile from './graphics/mobile/Dudes';
 
-const ResponsiveComponent = ({ MobileComponent, DesktopComponent }) => (
+interface ResponsiveComponentProps {
+    MobileComponent: React.ComponentType;
+    DesktopComponent: React.ComponentType;
+}
+
+const ResponsiveComponent = ({ MobileComponent, DesktopComponent }: ResponsiveComponentProps) => (
     <>
         <div className="md:hidden"><MobileComponent /></div>
         <div className="hidden md:block"><DesktopComponent /></div>
     </>
 );
 
+// Add this interface before the Background component
+interface BackgroundConfig {
+    base: React.ReactElement;
+    extraElements?: React.ReactElement;
+}
+
 const Background = () => {
     const { activeBackground } = useBackground();
 
-    const backgrounds = {
+    // Then modify the backgrounds declaration
+    const backgrounds: Record<string, BackgroundConfig> = {
         sun: {
             base: <ResponsiveComponent MobileComponent={SunMobile} DesktopComponent={SunDesktop} />,
         },
@@ -38,13 +51,12 @@ const Background = () => {
             base: <ResponsiveComponent MobileComponent={MountainMobile} DesktopComponent={MountainDesktop} />,
             extraElements: <Stars />
         }
-    };
+    } as const;
 
     const activeBackgroundConfig = backgrounds[activeBackground];
 
     return (
         <div id="background-container" className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-            {/* Only render the active background */}
             <div className="absolute inset-0">
                 {activeBackgroundConfig?.extraElements}
                 <div id="background" className="z-0 w-full h-auto absolute bottom-0 right-0">
@@ -52,7 +64,6 @@ const Background = () => {
                 </div>
             </div>
 
-            {/* Fixed Dudes in Foreground */}
             <div id="little-dudes" className="absolute bottom-0 w-full h-auto z-30">
                 <ResponsiveComponent
                     MobileComponent={DudesMobile}
@@ -63,4 +74,4 @@ const Background = () => {
     );
 };
 
-export default Background;
+export default Background; 

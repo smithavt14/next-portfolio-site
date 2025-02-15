@@ -4,7 +4,7 @@ import { useBackground } from '@hooks/useBackground';
 const BackgroundPicker = () => {
     const { activeBackground, setActiveBackground } = useBackground();
 
-    const getIconClasses = (iconName) => {
+    const getIconClasses = (iconName: string) => {
         const baseClasses = "transition-all duration-200 fill-midnight dark:fill-white";
         return activeBackground === iconName
             ? `${baseClasses} w-6 h-6`
@@ -13,7 +13,6 @@ const BackgroundPicker = () => {
 
     return (
         <div className="flex flex-col items-center gap-2">
-            {/* Icons Container */}
             <div className="flex items-end h-8">
                 <button
                     onClick={() => setActiveBackground('moon')}
@@ -41,8 +40,7 @@ const BackgroundPicker = () => {
                 </button>
             </div>
 
-            {/* Dot Indicator */}
-            <div className="relative w-32 h-1"> {/* width matches total of 4 buttons (4 * w-8 = w-32) */}
+            <div className="relative w-32 h-1">
                 <div 
                     className="absolute w-1 h-1 rounded-full bg-midnight dark:bg-white transition-all duration-200 ease-in-out"
                     style={{ 
@@ -57,4 +55,4 @@ const BackgroundPicker = () => {
     );
 }
 
-export default BackgroundPicker;
+export default BackgroundPicker; 
